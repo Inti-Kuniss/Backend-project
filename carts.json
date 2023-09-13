@@ -1,0 +1,19 @@
+[
+  {
+    "id": "2k644zrcz41tf4bzz9u0m",
+    "products": [
+      {
+        "id": 1,
+        "quantity": 1
+      },
+      {
+        "id": 2,
+        "quantity": 1
+      },
+      {
+        "id": 3,
+        "quantity": 4
+      }
+    ]
+  }
+]

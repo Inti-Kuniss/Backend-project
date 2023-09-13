@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Nike Air Max 90",
+    "description": "Zapatillas deportivas Nike Air Max 90",
+    "price": 50000,
+    "thumbnail": "nike_air_max.jpg",
+    "code": "NKE001",
+    "stock": 20
+  },
+  {
+    "id": 2,
+    "title": "Adidas Superstar",
+    "description": "Zapatillas clásicas Adidas Superstar",
+    "price": 30000,
+    "thumbnail": "adidas_superstar.jpg",
+    "code": "ADS002",
+    "stock": 40
+  },
+  {
+    "id": 3,
+    "title": "Converse Chuck Taylor",
+    "description": "Zapatillas icónicas Converse Chuck Taylor",
+    "price": 17000,
+    "thumbnail": "converse_chuck_taylor.jpg",
+    "code": "CON003",
+    "stock": 10
+  },
+  {
+    "id": 4,
+    "title": "Puma Cali",
+    "description": "Zapatillas de moda Puma Cali",
+    "price": 45000,
+    "thumbnail": "puma_cali.jpg",
+    "code": "PUM004",
+    "stock": 15
+  },
+  {
+    "id": 5,
+    "title": "Reebok Classic Leather",
+    "description": "Zapatillas Reebok Classic Leather",
+    "price": 28000,
+    "thumbnail": "reebok_classic_leather.jpg",
+    "code": "REB005",
+    "stock": 25
+  },
+  {
+    "id": 6,
+    "title": "Vans Old Skool",
+    "description": "Zapatillas Vans Old Skool",
+    "price": 32000,
+    "thumbnail": "vans_old_skool.jpg",
+    "code": "VAN006",
+    "stock": 30
+  },
+  {
+    "id": 7,
+    "title": "New Balance 990",
+    "description": "Zapatillas New Balance 990",
+    "price": 60000,
+    "thumbnail": "new_balance_990.jpg",
+    "code": "NWB007",
+    "stock": 12
+  },
+  {
+    "id": 8,
+    "title": "Saucony Jazz Original",
+    "description": "Zapatillas Saucony Jazz Original",
+    "price": 32000,
+    "thumbnail": "saucony_jazz_original.jpg",
+    "code": "SAU008",
+    "stock": 18
+  },
+  {
+    "id": 9,
+    "title": "Asics Gel-Kayano",
+    "description": "Zapatillas Asics Gel-Kayano",
+    "price": 55000,
+    "thumbnail": "asics_gel_kayano.jpg",
+    "code": "ASI009",
+    "stock": 8
+  },
+  {
+    "id": 10,
+    "title": "Under Armour HOVR",
+    "description": "Zapatillas Under Armour HOVR",
+    "price": 48000,
+    "thumbnail": "under_armour_hovr.jpg",
+    "code": "UA010",
+    "stock": 22
+  }
+]
