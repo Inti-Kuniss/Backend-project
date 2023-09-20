@@ -1,6 +1,7 @@
 // Importamos los módulos necesarios.
 const express = require('express');
 const ProductManager = require('./ProductManager');
+const CartManager = require('./CartManager');
 const fs = require('fs');
 
 // Creamos una instancia de Express.
@@ -9,6 +10,9 @@ const port = 8080;
 
 // Creamos una instancia de ProductManager con la ruta al archivo de productos.
 const productManager = new ProductManager('products.json');
+
+// Creamos una instancia de CartManager con la ruta al archivo de productos.
+const cartManager = new CartManager('carts.json');
 
 // Middleware para permitir el uso de JSON en las solicitudes.
 app.use(express.json());
@@ -90,7 +94,7 @@ app.delete('/products/:pid', async (req, res) => {
 app.post('/carts', (req, res) => {
     try {
         // Generar un ID único para el carrito
-        const cartId = generateUniqueId();
+        const cartId = cartManager.generateUniqueId();
         
         // Crear un carrito vacío.
         const cart = {
@@ -99,9 +103,9 @@ app.post('/carts', (req, res) => {
         };
         
         // Guardar el carrito en el archivo "carts.json".
-        const carts = getCartsFromFile();
+        const carts = cartManager.getCarts();
         carts.push(cart);
-        saveCartsToFile(carts);
+        cartManager.addCart(carts);
         
         res.status(201).json(cart);
     } catch (error) {
@@ -113,7 +117,7 @@ app.post('/carts', (req, res) => {
 app.get('/carts/:cid', (req, res) => {
     try {
         const cartId = req.params.cid;
-        const carts = getCartsFromFile();
+        const carts = cartManager.getCarts();
         const cart = carts.find(c => c.id === cartId);
         
         if (cart) {
@@ -133,7 +137,7 @@ app.post('/carts/:cid/product/:pid', (req, res) => {
         const productId = parseInt(req.params.pid);
         const quantity = req.body.quantity || 1; // Default a 1 si no se proporciona.
         
-        const carts = getCartsFromFile();
+        const carts = cartManager.getCarts();
         const cart = carts.find(c => c.id === cartId);
         
         if (!cart) {
@@ -160,33 +164,13 @@ app.post('/carts/:cid/product/:pid', (req, res) => {
         }
         
         // Guardar el carrito actualizado en el archivo.
-        saveCartsToFile(carts);
+        cartManager.addCart(carts);
         
         res.status(201).json(cart);
     } catch (error) {
         res.status(500).json({ error: 'Error al agregar el producto al carrito' });
     }
 });
-
-// Función para obtener los carritos desde el archivo "carts.json".
-function getCartsFromFile() {
-    try {
-        const data = fs.readFileSync('carts.json', 'utf-8');
-        return JSON.parse(data);
-    } catch (error) {
-        return [];
-    }
-}
-
-// Función para guardar los carritos en el archivo "carts.json".
-function saveCartsToFile(carts) {
-    fs.writeFileSync('carts.json', JSON.stringify(carts, null, 2), 'utf-8');
-}
-
-// Función para generar un ID único.
-function generateUniqueId() {
-    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-}
 
 // Iniciamos el servidor en el puerto especificado.
 app.listen(port, () => {
