@@ -4,10 +4,10 @@ const ProductManager = require('../controllers/ProductManager');
 const CartManager = require('../controllers/CartManager');
 
 // Creamos una instancia de ProductManager con la ruta al archivo de productos.
-const productManager = new ProductManager('products.json');
+const productManager = new ProductManager('./models/products.json');
 
 // Creamos una instancia de CartManager con la ruta al archivo de productos.
-const cartManager = new CartManager('carts.json');
+const cartManager = new CartManager('./models/carts.json');
 
 // Ruta para obtener todos los productos o un número limitado de productos.
 router.get('/products', async (req, res) => {

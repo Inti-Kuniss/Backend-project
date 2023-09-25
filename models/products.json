@@ -3,10 +3,10 @@
     "id": 1,
     "title": "Nike Air Max 90",
     "description": "Zapatillas deportivas Nike Air Max 90",
-    "price": 200,
+    "price": 2320,
     "thumbnail": "nike_air_max.jpg",
     "code": "NKE001",
-    "stock": 35
+    "stock": 15
   },
   {
     "id": 2,

@@ -10,13 +10,13 @@ class CartManager {
 
     // Función para guardar los carritos en el archivo "carts.json".
     addCart(cart) {
-        fs.writeFileSync('carts.json', JSON.stringify(cart, null, 2), 'utf-8');
+        fs.writeFileSync(this.path, JSON.stringify(cart, null, 2), 'utf-8');
     }
 
     // Función para obtener los carritos desde el archivo "carts.json".
     getCarts() {
         try {
-            const data = fs.readFileSync('carts.json', 'utf-8');
+            const data = fs.readFileSync(this.path, 'utf-8');
             return JSON.parse(data);
         } catch (error) {
             return [];

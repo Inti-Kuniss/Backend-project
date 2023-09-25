@@ -18,10 +18,10 @@ const routes = require('./routes/routes');
 app.use('/', routes);
 
 // Creamos una instancia de ProductManager con la ruta al archivo de productos.
-const productManager = new ProductManager('products.json');
+const productManager = new ProductManager('./models/products.json');
 
 // Creamos una instancia de CartManager con la ruta al archivo de productos.
-const cartManager = new CartManager('carts.json');
+const cartManager = new CartManager('./models/carts.json');
 
 // Iniciamos el servidor en el puerto especificado.
 app.listen(port, () => {
