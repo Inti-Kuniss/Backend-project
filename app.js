@@ -1,7 +1,7 @@
 // Importamos los módulos necesarios.
 const express = require('express');
-const ProductManager = require('./ProductManager');
-const CartManager = require('./CartManager');
+const ProductManager = require('./controllers/ProductManager');
+const CartManager = require('./controllers/CartManager');
 const fs = require('fs');
 
 // Creamos una instancia de Express.
