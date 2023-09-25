@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const ProductManager = require('./ProductManager');
-const CartManager = require('./CartManager');
+const ProductManager = require('../ProductManager');
+const CartManager = require('../CartManager');
 
 // Creamos una instancia de ProductManager con la ruta al archivo de productos.
 const productManager = new ProductManager('products.json');

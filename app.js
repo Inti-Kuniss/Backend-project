@@ -12,7 +12,7 @@ const port = 8080;
 app.use(express.json());
 
 // Importa las rutas desde el archivo "routes.js"
-const routes = require('./routes');
+const routes = require('./routes/routes');
 
 // Usa las rutas como middleware
 app.use('/', routes);
