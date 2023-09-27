@@ -1,8 +1,9 @@
 // Importamos los módulos necesarios.
 const express = require('express');
-const ProductManager = require('./controllers/ProductManager');
-const CartManager = require('./controllers/CartManager');
 const fs = require('fs');
+const { productManager, cartManager } = require('./persistance/index');
+const productsRoutes = require('./routes/products.routes');
+const cartsRoutes = require('./routes/carts.routes');
 
 // Creamos una instancia de Express.
 const app = express();
@@ -11,17 +12,11 @@ const port = 8080;
 // Middleware para permitir el uso de JSON en las solicitudes.
 app.use(express.json());
 
-// Importa las rutas desde el archivo "routes.js"
-const routes = require('./routes/routes');
+app.use(productsRoutes);
+app.use(cartsRoutes);
 
 // Usa las rutas como middleware
-app.use('/', routes);
-
-// Creamos una instancia de ProductManager con la ruta al archivo de productos.
-const productManager = new ProductManager('./models/products.json');
-
-// Creamos una instancia de CartManager con la ruta al archivo de productos.
-const cartManager = new CartManager('./models/carts.json');
+// app.use('/', router);
 
 // Iniciamos el servidor en el puerto especificado.
 app.listen(port, () => {
